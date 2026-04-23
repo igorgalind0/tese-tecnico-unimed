@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Banco SQLite (gerado em tempo de execução)
+*.db
+*.sqlite
+
+# Node / frontend
+node_modules/
+dist/
+.vite/
+
+# Outputs gerados (opcional — manter os CSVs de exemplo, ignorar só se quiser)
+# kata-4/output/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+*.swp
