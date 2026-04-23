@@ -55,6 +55,7 @@ uvicorn main:app --reload --port 8000
 ```
 
 **Frontend (React + Vite):**
+**Abra outro terminal bash e coloque:**
 
 ```bash
 cd kata-2/frontend
@@ -74,6 +75,9 @@ Kata puramente documental. Leia: `kata-3/PLANO.md`
 ---
 
 ### Kata 4 — Pipeline de Relatório
+
+**Volte para a pasta raiz**:
+`cd ../..`
 
 ```bash
 cd kata-4
