@@ -2,12 +2,6 @@
 Kata 2 — Backend: Painel de Tarefas
 =====================================
 API REST construída com FastAPI + SQLite.
-
-Decisão de persistência: SQLite
-- Zero dependências externas (sem instalar Postgres, MySQL)
-- SQL real, não mock em memória — permite testar queries reais
-- Arquivo local → fácil de inspecionar com DBeaver ou sqlite3 CLI
-- Troca para Postgres em produção requer apenas mudar a connection string
 """
 
 from __future__ import annotations
@@ -23,9 +17,7 @@ from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 
-# ---------------------------------------------------------------------------
 # Configuração
-# ---------------------------------------------------------------------------
 
 DB_PATH = os.environ.get("DB_PATH", "tasks.db")
 
@@ -43,9 +35,7 @@ app.add_middleware(
 )
 
 
-# ---------------------------------------------------------------------------
 # Banco de dados
-# ---------------------------------------------------------------------------
 
 def init_db() -> None:
     with get_conn() as conn:
@@ -83,9 +73,7 @@ def startup():
     init_db()
 
 
-# ---------------------------------------------------------------------------
 # Schemas (Pydantic)
-# ---------------------------------------------------------------------------
 
 class TaskStatus(str, Enum):
     pending = "pending"
@@ -137,9 +125,7 @@ def _now() -> str:
     return datetime.now(timezone.utc).isoformat()
 
 
-# ---------------------------------------------------------------------------
 # Endpoints
-# ---------------------------------------------------------------------------
 
 @app.get("/tasks", response_model=List[TaskResponse], summary="Listar tarefas")
 def list_tasks(
@@ -224,9 +210,7 @@ def delete_task(task_id: int):
         raise HTTPException(status_code=404, detail=f"Tarefa {task_id} não encontrada.")
 
 
-# ---------------------------------------------------------------------------
 # Health check (para observabilidade)
-# ---------------------------------------------------------------------------
 
 @app.get("/health", include_in_schema=False)
 def health():

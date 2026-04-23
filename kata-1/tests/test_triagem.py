@@ -79,7 +79,7 @@ class TestInteracaoRegras4e5(unittest.TestCase):
         """
         Caso do enunciado: 15 anos + MÉDIA.
         R4 NÃO se aplica (não é idoso).
-        R5 aplica: MÉDIA → ALTA.
+        R5 aplica: MÉDIA > ALTA.
         Resultado esperado: ALTA.
         """
         p = Paciente("João", 15, Urgencia.MEDIA, "08:00")
