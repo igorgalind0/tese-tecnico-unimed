@@ -1,0 +1,21 @@
+{
+  "total_pedidos_por_status": {
+    "pago": 19,
+    "em_processamento": 8,
+    "cancelado": 8
+  },
+  "ticket_medio_por_estado": {
+    "BA": 1322.48,
+    "CE": 1135.14,
+    "PE": 1127.22,
+    "SP": 1027.72
+  },
+  "entregas_no_prazo_pct": 30.4,
+  "entregas_com_atraso_pct": 69.6,
+  "top3_cidades_volume_pedidos": {
+    "Sao Paulo": 22,
+    "Fortaleza": 6,
+    "Recife": 4
+  },
+  "media_atraso_dias_pedidos_atrasados": 8.1
+}

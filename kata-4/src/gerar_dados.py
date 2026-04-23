@@ -13,7 +13,7 @@ random.seed(42)
 DATA_DIR = Path(__file__).parent.parent / "data"
 DATA_DIR.mkdir(exist_ok=True)
 
-# ─── Dados base ───────────────────────────────────────────────────────────
+# Dados base
 
 NOMES = [
     "Ana Souza", "Carlos Lima", "João Pedro", "Maria Oliveira",
@@ -54,7 +54,7 @@ def rand_date_mixed(start: datetime, end: datetime) -> str:
     return d.strftime(fmt)
 
 
-# ─── clientes.csv ─────────────────────────────────────────────────────────
+# clientes.csv
 
 clientes = []
 for i in range(1, 11):
@@ -76,7 +76,7 @@ with open(DATA_DIR / "clientes.csv", "w", newline="", encoding="utf-8") as f:
 print(f"✓ clientes.csv  — {len(clientes)} registros")
 
 
-# ─── pedidos.csv ──────────────────────────────────────────────────────────
+# pedidos.csv
 
 pedidos = []
 for i in range(1, 31):
@@ -108,7 +108,7 @@ with open(DATA_DIR / "pedidos.csv", "w", newline="", encoding="utf-8") as f:
 print(f"✓ pedidos.csv   — {len(pedidos)} registros")
 
 
-# ─── entregas.csv ─────────────────────────────────────────────────────────
+# entregas.csv
 
 # IDs de pedidos válidos
 ids_pedidos_validos = [p["id_pedido"] for p in pedidos]
